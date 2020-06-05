@@ -82,4 +82,10 @@ Device.prototype.getInfo = function (successCallback, errorCallback) {
     exec(successCallback, errorCallback, 'Device', 'getDeviceInfo', []);
 };
 
+if (!window.plugins) {
+  window.plugins = {};
+}
+window.plugins.device = new Device();
+
+
 module.exports = new Device();
